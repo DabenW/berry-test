@@ -10,8 +10,8 @@ import MinimalLayout from 'layout/MinimalLayout';
 import Error from 'error';
 
 // material-ui
-import { CssBaseline, StyledEngineProvider } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 
 // assets
 import globalStyles from 'styles/style.css';
@@ -124,7 +124,7 @@ export const Free = () => {
     const location = useLocation();
     const customization = useSelector((state) => state.customization);
     return (
-        <StyledEngineProvider injectfirst>
+        <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme(customization)}>
                 <CssBaseline />
                 <NavigationScroll>{location.pathname.startsWith('/pages') ? <MinimalLayout /> : <MainLayout />}</NavigationScroll>
